@@ -83,9 +83,14 @@ document.querySelector('#skip').addEventListener('click',
 
 //Event listener that goes off when the mute button is clicked
 //Mutes or unmutes the video
+//Updates text of button
 document.querySelector('#mute').addEventListener('click',
 	() => {
 		console.log("Mute");
+		if (video.muted)
+			document.querySelector('#mute').innerHTML = "Mute";
+		else
+			document.querySelector('#mute').innerHTML = "Unmute";
 		video.muted = !video.muted
 		console.log("Video is now muted: " + video.muted)
 	}

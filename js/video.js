@@ -40,11 +40,7 @@ document.querySelector('#pause').addEventListener("click",
 document.querySelector('#slower').addEventListener('click',
 	() => {
 		console.log("Slow down");
-		//This if statement is just to prevent console from throwing an error for going too slow
-		if (video.playbackRate >= .2)
-			video.playbackRate -= .1;
-		else
-			console.log("Video is too slow to slow even more");
+		video.playbackRate *= .9;
 		console.log("Video playback rate is now " + video.playbackRate);
 	}
 );
@@ -54,11 +50,7 @@ document.querySelector('#slower').addEventListener('click',
 document.querySelector('#faster').addEventListener('click',
 	() => {
 		console.log("Speed up");
-		//This if statement is just to prevent console from throwing an error for going too fast
-		if (video.playbackRate <= 16)
-			video.playbackRate += .1;
-		else
-			console.log("Video is too fast to be sped up");
+		video.playbackRate /= .9;
 		console.log("Video playback rate is now "+ video.playbackRate);
 	}
 );
